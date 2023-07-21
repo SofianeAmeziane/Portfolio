@@ -69,20 +69,18 @@ export const DashBoard = () => {
           className="two"
           p="0px 100px"
           sx={{
-            minHeight: { md: '80vh' },
             background: 'black',
           }}
         >
           <HomeNavBar />
-          <Box p={2}>
-            {' '}
-            <Typography component="div" variant="body1" color="white">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley
-            </Typography>
+          <Box p={2} sx={{ textAlign: 'center' }}>
+            <Box
+              sx={{ width: '60%' }}
+              textAlign="center"
+              component="img"
+              alt={'logo Zenika'}
+              src={'/sofiane-avatar.png'}
+            />
           </Box>
         </Box>
       </Grid>
