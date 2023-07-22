@@ -60,12 +60,12 @@ export const About = () => {
           </Grid>
           <Grid item>
             <Typography variant="body1" align="center">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley dummy
-              text of the printing and typesetting industry. Lorem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an
+              Having a master's degree in computer science and more than 4 years
+              of experience as a Full Stack developer. I had the opportunity to
+              work with the JAVA ecosystem before specializing in JavaScript
+              technologies, particularly with ReactJS, NextJS and NodeJs.
+              Curious and passionate about programming and problem solving, I am
+              always ready for new challenges and new technologies to discover.
             </Typography>
           </Grid>
           <Grid item mb={10}>
