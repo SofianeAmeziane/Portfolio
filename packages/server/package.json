@@ -5,7 +5,7 @@
   "author": "SofianeAmeziane <67568893+SofianeAmeziane@users.noreply.github.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/server.js",
+  "main": "lib/server.ts",
   "directories": {
     "lib": "lib"
   },
@@ -13,6 +13,10 @@
     "lib"
   ],
   "scripts": {
-    "start": "node lib/server.js"
+    "start": "nodemon lib/server.ts"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
   }
 }
