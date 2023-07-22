@@ -18,8 +18,8 @@ export const Footer = () => {
     >
       <Grid item xs={12}>
         <Typography
-          variant="h5"
-          component="h5"
+          variant="h6"
+          component="h6"
           sx={{ fontWeight: 'bold', color: 'white' }}
           textAlign="center"
         >

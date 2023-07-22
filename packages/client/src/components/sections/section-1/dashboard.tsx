@@ -66,10 +66,12 @@ export const DashBoard = () => {
       </Grid>
       <Grid item xs={12} md={7}>
         <Box
-          className="two"
           p="0px 100px"
           sx={{
             background: 'black',
+            WebkitClipPath: {
+              md: 'polygon(10% 0, 100% 0%, 100% 100%, 0% 100%)',
+            },
           }}
         >
           <HomeNavBar />

@@ -1,6 +1,6 @@
 import React from 'react';
 import FixedNavBar from '../navs/nav';
-import { Container, Box } from '@mui/material';
+import { Box } from '@mui/material';
 
 export default function Layout({ children }: any) {
   return (
