@@ -1,8 +1,13 @@
 import { Box, Button } from '@mui/material';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const HomeNavBar = () => {
+const HomeNavBar = ({
+  scrollToAbout,
+  scrollToSkills,
+  scrollToPortfolio,
+  scrollToContactMe,
+  handleScroll,
+}: any) => {
   return (
     <Box
       display={{ xs: 'none', md: 'flex' }}
@@ -14,18 +19,29 @@ const HomeNavBar = () => {
         pt: '60px',
       }}
     >
-      <Button component={Link} to="/" variant="text" sx={{ color: 'white' }}>
+      <Button
+        onClick={() => handleScroll(scrollToAbout)}
+        variant="text"
+        sx={{ color: 'white' }}
+      >
         About Me
       </Button>
-      <Button component={Link} to="/" variant="text" sx={{ color: 'white' }}>
+      <Button
+        onClick={() => handleScroll(scrollToSkills)}
+        variant="text"
+        sx={{ color: 'white' }}
+      >
         Skills
       </Button>
-      <Button component={Link} to="/" variant="text" sx={{ color: 'white' }}>
+      <Button
+        onClick={() => handleScroll(scrollToPortfolio)}
+        variant="text"
+        sx={{ color: 'white' }}
+      >
         Portfolio
       </Button>
       <Button
-        component={Link}
-        to="/"
+        onClick={() => handleScroll(scrollToContactMe)}
         sx={{
           ':hover': {
             bgcolor: 'white',

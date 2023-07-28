@@ -11,14 +11,22 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import './dashboard.css';
 import HomeNavBar from '../../navs/homeNavBar';
+import { Link as LinkRouter } from 'react-router-dom';
 
 export const StyledDescriptionBox = styled(Box)({
   background: '#1e1d1e',
 });
 
-export const DashBoard = () => {
+export const DashBoard = ({
+  scrollToDashboard,
+  scrollToAbout,
+  scrollToSkills,
+  scrollToPortfolio,
+  scrollToContactMe,
+  handleScroll,
+}: any) => {
   return (
-    <Grid container>
+    <Grid ref={scrollToDashboard} container>
       <Grid item xs={12} md={5}>
         <Box
           className="one"
@@ -29,10 +37,16 @@ export const DashBoard = () => {
           }}
         >
           <Box p={2} mt="60px">
-            <Box>
-              <img src={'../../LogoSofiane.ico'} alt="sofiane" loading="lazy" />
-            </Box>
-            <Box mt={20}>
+            <LinkRouter to="/">
+              <Box>
+                <img
+                  src={'../../LogoSofiane.ico'}
+                  alt="sofiane"
+                  loading="lazy"
+                />
+              </Box>
+            </LinkRouter>
+            <Box mt={15}>
               <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
                 Hi, I am
               </Typography>
@@ -50,13 +64,19 @@ export const DashBoard = () => {
             <Box sx={{ mt: 8 }}>
               <IconButton
                 aria-label="Linkedin.com"
-                onClick={() => window.open('https://www.Linkedin.com')}
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/in/sofiane-ameziane-9662b5172/',
+                  )
+                }
               >
                 <LinkedInIcon fontSize="large" />
               </IconButton>
               <IconButton
                 aria-label="Github.com"
-                onClick={() => window.open('https://www.github.com')}
+                onClick={() =>
+                  window.open('https://github.com/SofianeAmeziane')
+                }
               >
                 <GitHubIcon fontSize="large" />
               </IconButton>
@@ -74,7 +94,14 @@ export const DashBoard = () => {
             },
           }}
         >
-          <HomeNavBar />
+          <HomeNavBar
+            scrollToDashboard={scrollToDashboard}
+            scrollToAbout={scrollToAbout}
+            scrollToSkills={scrollToSkills}
+            scrollToPortfolio={scrollToPortfolio}
+            scrollToContactMe={scrollToContactMe}
+            handleScroll={handleScroll}
+          />
           <Box p={2} sx={{ textAlign: 'center' }}>
             <Box
               sx={{ width: '60%' }}

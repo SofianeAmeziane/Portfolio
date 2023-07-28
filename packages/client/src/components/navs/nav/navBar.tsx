@@ -6,7 +6,6 @@ import {
   Button,
   Box,
   Backdrop,
-  Container,
   Grid,
   Typography,
 } from '@mui/material';
@@ -23,7 +22,13 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   // Override media queries injected by theme.mixins.toolbar
 }));
 
-const FixedNavBar = () => {
+const FixedNavBar = ({
+  scrollToAbout,
+  scrollToSkills,
+  scrollToPortfolio,
+  scrollToContactMe,
+  handleScrollSection,
+}: any) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [open, setOpen] = React.useState(false);
@@ -94,13 +99,25 @@ const FixedNavBar = () => {
             >
               <Grid item xs={4}>
                 <Box sx={{ display: 'flex' }}>
-                  <Button variant="text" sx={{ color: 'white' }}>
+                  <Button
+                    variant="text"
+                    sx={{ color: 'white' }}
+                    onClick={() => handleScrollSection(scrollToAbout)}
+                  >
                     About Me
                   </Button>
-                  <Button variant="text" sx={{ color: 'white' }}>
+                  <Button
+                    variant="text"
+                    sx={{ color: 'white' }}
+                    onClick={() => handleScrollSection(scrollToSkills)}
+                  >
                     Skills
                   </Button>
-                  <Button variant="text" sx={{ color: 'white' }}>
+                  <Button
+                    variant="text"
+                    sx={{ color: 'white' }}
+                    onClick={() => handleScrollSection(scrollToPortfolio)}
+                  >
                     Portfolio
                   </Button>
                   <Button
@@ -113,6 +130,7 @@ const FixedNavBar = () => {
                       background: 'white',
                       borderRadius: 8,
                     }}
+                    onClick={() => handleScrollSection(scrollToContactMe)}
                   >
                     Contact Me
                   </Button>
@@ -139,8 +157,24 @@ const FixedNavBar = () => {
                     I Am A Developer
                   </Typography>
                   <Box sx={{ mt: 2 }}>
-                    <LinkedInIcon fontSize="large" />
-                    <GitHubIcon fontSize="large" />
+                    <IconButton
+                      aria-label="Linkedin.com"
+                      onClick={() =>
+                        window.open(
+                          'https://www.linkedin.com/in/sofiane-ameziane-9662b5172/',
+                        )
+                      }
+                    >
+                      <LinkedInIcon color="info" fontSize="large" />
+                    </IconButton>
+                    <IconButton
+                      aria-label="Github.com"
+                      onClick={() =>
+                        window.open('https://github.com/SofianeAmeziane')
+                      }
+                    >
+                      <GitHubIcon color="info" fontSize="large" />
+                    </IconButton>
                   </Box>
                 </Grid>
               </Grid>
@@ -156,13 +190,25 @@ const FixedNavBar = () => {
             mr: 3,
           }}
         >
-          <Button variant="text" sx={{ color: 'white' }}>
+          <Button
+            variant="text"
+            sx={{ color: 'white' }}
+            onClick={() => handleScrollSection(scrollToAbout)}
+          >
             About Me
           </Button>
-          <Button variant="text" sx={{ color: 'white' }}>
+          <Button
+            variant="text"
+            sx={{ color: 'white' }}
+            onClick={() => handleScrollSection(scrollToSkills)}
+          >
             Skills
           </Button>
-          <Button variant="text" sx={{ color: 'white' }}>
+          <Button
+            variant="text"
+            sx={{ color: 'white' }}
+            onClick={() => handleScrollSection(scrollToPortfolio)}
+          >
             Portfolio
           </Button>
           <Button
@@ -175,6 +221,7 @@ const FixedNavBar = () => {
               background: 'white',
               borderRadius: 8,
             }}
+            onClick={() => handleScrollSection(scrollToContactMe)}
           >
             Contact Me
           </Button>

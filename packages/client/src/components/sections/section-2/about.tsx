@@ -32,79 +32,83 @@ const Description = ({ title, children }: { title: string; children: any }) => {
   );
 };
 
-export const About = () => {
+export const About = ({ scrollToAbout, scrollToSkills }: any) => {
   const [moreSkills, setMoreSkills] = useState(false);
   return (
-    <Box p={8}>
-      <Container>
-        <Grid
-          container
-          spacing={6}
-          direction="column"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Grid item>
-            <Typography
-              variant="h3"
-              component="h3"
-              sx={{
-                fontWeight: 'bold',
-                border: 8,
-                p: '30px 80px',
-                textAlign: 'center',
-              }}
-            >
-              About Me
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body1" align="center">
-              Having a master's degree in computer science and more than 4 years
-              of experience as a Full Stack developer. I had the opportunity to
-              work with the JAVA ecosystem before specializing in JavaScript
-              technologies, particularly with ReactJS, NextJS and NodeJs.
-              Curious and passionate about programming and problem solving, I am
-              always ready for new challenges and new technologies to discover.
-            </Typography>
-          </Grid>
-          <Grid item mb={10}>
-            <Typography
-              variant="h5"
-              sx={{
-                borderRight: 3,
-                borderLeft: 3,
-                p: '10px 20px',
-              }}
-            >
-              EXPLORE
-            </Typography>
-          </Grid>
+    <Container ref={scrollToAbout}>
+      <Grid
+        p={8}
+        spacing={6}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Box sx={{ display: 'flex', justifyContent: 'center' }} mb={8}>
+          <Typography
+            variant="h4"
+            component="h4"
+            textAlign="center"
+            sx={{
+              fontWeight: 'bold',
+              border: 6,
+              p: '15px 70px',
+              letterSpacing: 8,
+            }}
+          >
+            ABOUT ME
+          </Typography>
+        </Box>
+        <Grid item xs={12}>
+          <Typography variant="body1" align="center">
+            Having a master's degree in computer science and more than 4 years
+            of experience as a Full Stack developer. I had the opportunity to
+            work with the JAVA ecosystem before specializing in JavaScript
+            technologies, particularly with ReactJS, NextJS and NodeJs. Curious
+            and passionate about programming and problem solving, I am always
+            ready for new challenges and new technologies to discover.
+          </Typography>
+        </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }} mb={8} mt={6}>
+          <Typography
+            variant="h4"
+            component="h4"
+            sx={{
+              borderRight: 3,
+              borderLeft: 3,
+              p: '15px 50px',
+              letterSpacing: 1,
+            }}
+          >
+            EXPLORE
+          </Typography>
+        </Box>
 
-          <Grid mb={4} container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Description title="Design">
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley dummy
-                text of the printing and typesetting industry. Lorem Ipsum has
-                been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley
-              </Description>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Description title="Developement">
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley dummy
-                text of the printing and typesetting industry. Lorem Ipsum has
-                been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley
-              </Description>
-            </Grid>
+        <Grid mb={4} container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <Description title="Design">
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley dummy text of the
+              printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an
+              unknown printer took a galley
+            </Description>
           </Grid>
+          <Grid item xs={12} md={6}>
+            <Description title="Developement">
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley dummy text of the
+              printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an
+              unknown printer took a galley
+            </Description>
+          </Grid>
+        </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Grid
+            item
             width={{ sx: '100%', md: '50%' }}
             mt={{ md: 10 }}
-            mb={{ md: 10, sx: 4 }}
+            mb={{ md: 6 }}
           >
             <Description title="Maintenance">
               Lorem Ipsum has been the industry's standard dummy text ever since
@@ -114,86 +118,93 @@ export const About = () => {
               unknown printer took a galley
             </Description>
           </Grid>
-          <Grid item mb={4}>
-            <Typography
-              variant="h3"
-              component="h3"
-              sx={{
-                fontWeight: 'bold',
-                border: 8,
-                p: '30px 80px',
-                textAlign: 'center',
-              }}
+        </Box>
+
+        <Grid ref={scrollToSkills} container>
+          <Grid item xs={12}>
+            <Box
+              sx={{ display: 'flex', justifyContent: 'center' }}
+              mb={8}
+              mt={6}
             >
-              Skills
-            </Typography>
+              <Typography
+                variant="h4"
+                component="h4"
+                textAlign="center"
+                sx={{
+                  fontWeight: 'bold',
+                  border: 6,
+                  p: '15px 70px',
+                  letterSpacing: 8,
+                }}
+              >
+                SKILLS
+              </Typography>
+            </Box>
           </Grid>
-
-          <Grid container>
-            <Grid item xs={12}>
-              <Grid item md={3} sm={6} xs={12}>
-                <Typography textAlign="center" variant="h4" mb={6}>
-                  Using Now:
-                </Typography>
-              </Grid>
-              <Grid container rowSpacing={6} spacing={4}>
-                {skillsList.map((title: string) => {
-                  return <Item title={title} />;
-                })}
-
-                <Grid item md={3} sm={6} xs={12} textAlign="center">
-                  <Box
-                    textAlign="center"
-                    component="img"
-                    alt={'logo Zenika'}
-                    src={'/about-icons/icons8-node-js.svg'}
-                  />
-                  <Typography variant="h5">NODE JS</Typography>
-                </Grid>
-                <Grid item md={3} sm={6} xs={12} textAlign="center">
-                  <Box
-                    textAlign="center"
-                    component="img"
-                    alt={'logo Zenika'}
-                    src={'/about-icons/icons8-material-ui.svg'}
-                  />
-                  <Typography variant="h5">MATERIAL Ui</Typography>
-                </Grid>
-                <Grid item xs={12} textAlign="center">
-                  <Button
-                    size="large"
-                    onClick={() => {
-                      setMoreSkills(!moreSkills);
-                    }}
-                  >
-                    {moreSkills ? 'Close' : 'READ MORE'}
-                  </Button>
-                </Grid>
-
-                {moreSkills && (
-                  <>
-                    {moreSkillsList.map((title: string) => {
-                      return <Item title={title} />;
-                    })}
-                  </>
-                )}
-              </Grid>
+          <Grid item xs={12}>
+            <Grid item md={3} sm={6} xs={12}>
+              <Typography textAlign="center" variant="h4" mb={6}>
+                Using Now:
+              </Typography>
             </Grid>
-            <Grid item mt={6} xs={12}>
-              <Grid item md={3} sm={6} xs={12}>
-                <Typography textAlign="center" variant="h4" mb={6}>
-                  Learning:
-                </Typography>
+            <Grid container rowSpacing={6} spacing={4}>
+              {skillsList.map((title: string) => {
+                return <Item title={title} />;
+              })}
+
+              <Grid item md={3} sm={6} xs={12} textAlign="center">
+                <Box
+                  textAlign="center"
+                  component="img"
+                  alt={'logo Zenika'}
+                  src={'/about-icons/icons8-node-js.svg'}
+                />
+                <Typography variant="h5">NODE JS</Typography>
               </Grid>
-              <Grid container rowSpacing={6} spacing={4}>
-                {learningList.map((title: string) => {
-                  return <Item title={title} />;
-                })}
+              <Grid item md={3} sm={6} xs={12} textAlign="center">
+                <Box
+                  textAlign="center"
+                  component="img"
+                  alt={'logo Zenika'}
+                  src={'/about-icons/icons8-material-ui.svg'}
+                />
+                <Typography variant="h5">MATERIAL Ui</Typography>
               </Grid>
+              <Grid item xs={12} textAlign="center">
+                <Button
+                  size="large"
+                  onClick={() => {
+                    setMoreSkills(!moreSkills);
+                  }}
+                >
+                  {moreSkills ? 'Close' : 'READ MORE'}
+                </Button>
+              </Grid>
+
+              {moreSkills && (
+                <>
+                  {moreSkillsList.map((title: string) => {
+                    return <Item title={title} />;
+                  })}
+                </>
+              )}
+            </Grid>
+          </Grid>
+          <Grid item mt={6} xs={12}>
+            <Grid item md={3} sm={6} xs={12}>
+              <Typography textAlign="center" variant="h4" mb={6}>
+                Learning:
+              </Typography>
+            </Grid>
+            <Grid container rowSpacing={6} spacing={4}>
+              {learningList.map((title: string) => {
+                return <Item title={title} />;
+              })}
             </Grid>
           </Grid>
         </Grid>
-      </Container>
-    </Box>
+      </Grid>
+    </Container>
   );
 };
