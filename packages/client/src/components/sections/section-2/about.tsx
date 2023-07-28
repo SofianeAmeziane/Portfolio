@@ -108,7 +108,7 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
             item
             width={{ sx: '100%', md: '50%' }}
             mt={{ md: 10 }}
-            mb={{ md: 6 }}
+            mb={{ md: 4 }}
           >
             <Description title="Maintenance">
               Lorem Ipsum has been the industry's standard dummy text ever since
@@ -121,7 +121,7 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
         </Box>
 
         <Grid ref={scrollToSkills} container>
-          <Grid item xs={12}>
+          <Grid pt={2} item xs={12}>
             <Box
               sx={{ display: 'flex', justifyContent: 'center' }}
               mb={8}
