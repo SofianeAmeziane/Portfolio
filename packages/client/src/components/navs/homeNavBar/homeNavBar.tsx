@@ -14,7 +14,6 @@ const HomeNavBar = ({
       p={2}
       sx={{
         justifyContent: 'space-around',
-        width: '80%',
         textAlign: 'center',
         pt: '60px',
       }}

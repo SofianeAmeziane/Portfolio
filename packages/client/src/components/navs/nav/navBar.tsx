@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import HumbergerMenu from '../humbergerMenu';
-import { Link } from 'react-router-dom';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'center',
@@ -56,12 +55,12 @@ const FixedNavBar = ({
           scrollToSkills={scrollToSkills}
           scrollToPortfolio={scrollToPortfolio}
           scrollToContactMe={scrollToContactMe}
-          handleScrollSection={handleScroll}
+          handleScrollSection={handleScrollSection}
         />
         <Box
           display={{ xs: 'none', md: 'flex' }}
           sx={{
-            width: '40%',
+            width: '50%',
             justifyContent: 'space-around',
             textAlign: 'end',
           }}

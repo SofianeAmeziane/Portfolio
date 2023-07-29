@@ -36,9 +36,9 @@ export const DashBoard = ({
             justifyContent: 'center',
           }}
         >
-          <Box p={2} mt="60px">
+          <Box p={2} sx={{ mt: { xs: 0, md: '60px' } }}>
             <LinkRouter to="/">
-              <Box>
+              <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                 <img
                   src={'../../LogoSofiane.ico'}
                   alt="sofiane"
