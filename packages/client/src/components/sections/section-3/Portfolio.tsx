@@ -13,7 +13,7 @@ export const Portfolio = ({ scrollToPortfolio }: any) => {
       ref={scrollToPortfolio}
       p={8}
       sx={{
-        backgroundImage: `url(${'/Portfolio-img4.jpg'})`,
+        backgroundImage: `url(${'/portfolio/portfolio3.svg'})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -24,6 +24,7 @@ export const Portfolio = ({ scrollToPortfolio }: any) => {
           variant="h4"
           component="h4"
           sx={{
+            color: 'white',
             fontWeight: 'bold',
             border: 6,
             p: '15px 70px',
@@ -38,6 +39,7 @@ export const Portfolio = ({ scrollToPortfolio }: any) => {
           variant="h4"
           component="h4"
           sx={{
+            color: 'white',
             fontWeight: 'bold',
             letterSpacing: 1,
           }}
