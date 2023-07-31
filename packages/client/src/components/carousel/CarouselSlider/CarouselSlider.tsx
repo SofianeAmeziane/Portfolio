@@ -10,9 +10,6 @@ import {
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { CarouselContext } from 'pure-react-carousel';
 import './CarouselSlider.css';
-
-// import styled from 'styled-components';
-
 import Card from '../Card';
 import { Box } from '@mui/material';
 import useWindowSize from '../../../hooks/windowSiz';

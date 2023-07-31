@@ -86,20 +86,19 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
         <Grid mb={4} container spacing={4}>
           <Grid item xs={12} md={6}>
             <Description title="Design">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley
+              I'm probably not the typical designer positioned behind an
+              Illustrator artboard adjusting pixels, but I design. Immersed in
+              stylesheets tweaking font sizes and contemplating layouts is where
+              you'll find me (~_^). I'm committed to creating fluent user
+              experiences while staying fashionable.
             </Description>
           </Grid>
           <Grid item xs={12} md={6}>
             <Description title="Developement">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley
+              In building JavaScript applications, I'm equipped with just the
+              right tools, and can absolutely function independently of them to
+              deliver fast, resilient solutions optimized for scale —
+              performance and scalabilty are priorities on my radar.
             </Description>
           </Grid>
         </Grid>
@@ -111,11 +110,11 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
             mb={{ md: 4 }}
           >
             <Description title="Maintenance">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley
+              Your content strategy might be on point but it’s always a good
+              idea to improve it by creating new types of content. Your web
+              content also needs to be up to date. If you wrote a post that was
+              published years ago, it might not be relevant right now and some
+              of the information might need to be updated.
             </Description>
           </Grid>
         </Box>

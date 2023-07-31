@@ -15,7 +15,6 @@ const HomeNavBar = ({
       sx={{
         justifyContent: 'space-around',
         textAlign: 'center',
-        pt: '60px',
       }}
     >
       <Button
