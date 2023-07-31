@@ -25,7 +25,7 @@ export const DashBoard = ({
   handleScroll,
 }: any) => {
   return (
-    <Grid ref={scrollToDashboard} container>
+    <Grid ref={scrollToDashboard} container minHeight="100vh">
       <Grid
         item
         xs={12}
