@@ -124,11 +124,11 @@ export const DashBoard = ({
           />
           <Box p={2} sx={{ textAlign: 'center' }}>
             <Box
-              sx={{ width: '60%', height: { md: '60vh' } }}
+              sx={{ width: '100%' }}
               textAlign="center"
               component="img"
               alt={'logo Zenika'}
-              src={'/norhan-removebg-preview.png'}
+              src={'/sofiane.png'}
             />
           </Box>
         </Box>
