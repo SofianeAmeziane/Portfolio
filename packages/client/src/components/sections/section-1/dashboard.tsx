@@ -134,7 +134,7 @@ export const DashBoard = ({
         </Box>
       </Grid>
       <Grid item xs={12} sx={{ bgcolor: '#1e1d1e' }}>
-        <Grid container spacing={4} p={2}>
+        <Grid container spacing={4} p={2} textAlign="center">
           <Grid item xs={6} md={3}>
             <Typography component="body" color="white">
               Highly skilled at progressive enhancement, design systems & UI

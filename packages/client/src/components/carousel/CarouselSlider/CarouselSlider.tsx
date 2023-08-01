@@ -60,37 +60,33 @@ const CarouselSlider = ({ setSlideCount, setCurrentSlide }: any) => {
         <Slide index={1}>
           <Card
             company="Siemens Energy"
-            description="I worked as a full-stack developer consultant at Zenika Canada and
-            have worked for both internal and external clients. During my time
-            there, I learned new skills and obtained certifications."
+            description="I have been working for Siemens Energy Canada as a full-stack developer on a big project for testing transformers. 
+            During this project, I was able to learn more and practice my knowledge at work"
             image="/portfolio/siemens-energy.png"
           />
         </Slide>
         <Slide index={2}>
           <Card
             company="KAAYU TECHNOLOGIE"
-            description="I worked as a full-stack developer consultant at Zenika Canada and
-            have worked for both internal and external clients. During my time
-            there, I learned new skills and obtained certifications."
+            description="I worked for Kaayu Technologies as a front-end developer using the Next.js framework. It was my first time using React.js and also my first experience in Canada. 
+            I loved this framework so much that I continued to work with it until now."
             image="/portfolio/kaayu.jpg"
           />
         </Slide>
         <Slide index={3}>
           <Card
             company="CTC Algeria"
-            description="I worked as a full-stack developer consultant at Zenika Canada and
-            have worked for both internal and external clients. During my time
-            there, I learned new skills and obtained certifications."
+            description="I worked for CTC Etatique company in Algeria as a full-stack developer using PHP and jQuery. 
+            That experience was my first web development experience."
             image="/portfolio/ctc.png"
           />
         </Slide>
         <Slide index={4}>
           <Card
             company="Breeding Center Blida"
-            description="I worked as a full-stack developer consultant at Zenika Canada and
-            have worked for both internal and external clients. During my time
-            there, I learned new skills and obtained certifications."
-            image="/portfolio/chicken.webp"
+            description="I worked for a breeding center in Blida, Algeria as a Java desktop developer.
+             I worked on an ERP project for the company."
+            image="/portfolio/chicken1.webp"
           />
         </Slide>
       </Slider>
