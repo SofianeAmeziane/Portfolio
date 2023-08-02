@@ -31,7 +31,7 @@ export const DashBoard = ({
         xs={12}
         md={5}
         p="4px 50px"
-        textAlign={{ xs: 'center', md: 'start' }}
+        textAlign="center"
         sx={{ pt: { xs: 0, md: 4 } }}
       >
         <Box p={2}>

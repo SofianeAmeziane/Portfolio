@@ -19,16 +19,33 @@ const Item = ({ title }: { title: string }) => {
   );
 };
 
-const Description = ({ title, children }: { title: string; children: any }) => {
+const Description = ({
+  title,
+  children,
+  icon,
+}: {
+  title: string;
+  children: any;
+  icon: string;
+}) => {
   return (
-    <>
+    <Box textAlign="center">
+      <Box
+        width="64px"
+        p={1}
+        sx={{ bgcolor: '#2ECEA3', borderRadius: 10 }}
+        textAlign="center"
+        component="img"
+        alt={'logo Zenika'}
+        src={`/about-icons/web-${icon}.svg`}
+      />
       <Typography variant="h4" mb={2}>
         {title}
       </Typography>
       <Typography component="div" variant="body1" color="text.secondary">
         {children}
       </Typography>
-    </>
+    </Box>
   );
 };
 
@@ -75,7 +92,7 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
             sx={{
               borderRight: 3,
               borderLeft: 3,
-              p: '15px 50px',
+              p: '10px 30px',
               letterSpacing: 1,
             }}
           >
@@ -85,7 +102,7 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
 
         <Grid mb={4} container spacing={4}>
           <Grid item xs={12} md={6}>
-            <Description title="Design">
+            <Description title="Design" icon="design">
               I'm probably not the typical designer positioned behind an
               Illustrator artboard adjusting pixels, but I design. Immersed in
               stylesheets tweaking font sizes and contemplating layouts is where
@@ -94,7 +111,7 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
             </Description>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Description title="Developement">
+            <Description title="Developement" icon="dev">
               In building JavaScript applications, I'm equipped with just the
               right tools, and can absolutely function independently of them to
               deliver fast, resilient solutions optimized for scale —
@@ -106,10 +123,10 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
           <Grid
             item
             width={{ sx: '100%', md: '50%' }}
-            mt={{ md: 10 }}
+            mt={{ md: 4 }}
             mb={{ md: 4 }}
           >
-            <Description title="Maintenance">
+            <Description title="Maintenance" icon="maintenance">
               Your content strategy might be on point but it’s always a good
               idea to improve it by creating new types of content. Your web
               content also needs to be up to date. If you wrote a post that was
