@@ -31,21 +31,10 @@ export const Portfolio = ({ scrollToPortfolio }: any) => {
             letterSpacing: 8,
           }}
         >
-          PORTFOLIO
+          Professional Experience
         </Typography>
       </Box>
       <Box p={4} textAlign="center">
-        <Typography
-          variant="h4"
-          component="h4"
-          sx={{
-            color: 'white',
-            fontWeight: 'bold',
-            letterSpacing: 1,
-          }}
-        >
-          My References
-        </Typography>
         <Box className="carousel-container">
           <CarouselProvider
             visibleSlides={slideCount}

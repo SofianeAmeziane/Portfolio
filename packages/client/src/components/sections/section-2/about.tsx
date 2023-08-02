@@ -33,7 +33,7 @@ const Description = ({
       <Box
         width="64px"
         p={1}
-        sx={{ bgcolor: '#2ECEA3', borderRadius: 10 }}
+        sx={{ bgcolor: '#5f7eed', borderRadius: 10 }}
         textAlign="center"
         component="img"
         alt={'logo Zenika'}

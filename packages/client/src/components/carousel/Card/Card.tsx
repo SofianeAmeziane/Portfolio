@@ -3,11 +3,22 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Chip, Grid } from '@mui/material';
 
-export default function ActionAreaCard({ company, description, image }: any) {
+export default function ActionAreaCard({
+  company,
+  description,
+  image,
+  skills,
+}: any) {
+  console.log({ skills });
+
   return (
-    <Card sx={{ minHeight: 300 }}>
+    <Card
+      sx={{
+        minHeight: '70vh',
+      }}
+    >
       <CardActionArea>
         <CardMedia
           sx={{ height: '120px' }}
@@ -15,7 +26,7 @@ export default function ActionAreaCard({ company, description, image }: any) {
           image={image}
           alt="green iguana"
         />
-        <CardContent>
+        <CardContent sx={{ minHeight: '24vh' }}>
           <Typography gutterBottom variant="h5" component="div">
             {company}
           </Typography>
@@ -23,6 +34,27 @@ export default function ActionAreaCard({ company, description, image }: any) {
             {description}
           </Typography>
         </CardContent>
+        <Grid
+          container
+          rowSpacing={1}
+          columnSpacing={1}
+          p={2}
+          alignItems="flex-end"
+        >
+          {skills.map((item: any) => (
+            <Grid item xs={6} md={4}>
+              <Chip
+                label={item}
+                sx={{
+                  width: '100%',
+                  bgcolor: '#2c3599',
+                  color: '#ffffffbf',
+                  fontFamily: 'Roboto Mono, sans-serif',
+                }}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </CardActionArea>
     </Card>
   );
