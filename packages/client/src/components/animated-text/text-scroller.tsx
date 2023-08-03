@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
-import { useSpring, animated } from '@react-spring/web';
-import './text-scroller.css';
-const TextScroller = ({ text }: any) => {
-  const [key, setKey] = useState(1);
+import React from 'react';
+import { styled } from '@mui/material/styles';
+import Typewriter from 'typewriter-effect';
 
-  const scrolling = useSpring({
-    from: { transform: 'translate(100%,0)' },
-    to: { transform: 'translate(-40%,0)' },
-    config: { duration: 6000 },
-    reset: true,
-    //reverse: key % 2 == 0,
-    onRest: () => {
-      setKey(key + 1);
-    },
-  });
-
+const TypeWriterH1 = styled('h1')(({ theme }) => ({
+  fontSize: '15px',
+  color: `#343a40`,
+  animation: '1s cubic-bezier(0.215, 0.61, 0.355, 1) both',
+}));
+const TextScroller = ({ texts }: any) => {
   return (
-    <div key={key}>
-      <animated.div className="text" style={scrolling}>
-        {text}
-      </animated.div>
-    </div>
+    <TypeWriterH1>
+      <Typewriter
+        options={{
+          strings: texts,
+          autoStart: true,
+          loop: true,
+        }}
+      />
+    </TypeWriterH1>
   );
 };
 

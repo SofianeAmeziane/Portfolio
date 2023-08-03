@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  Typography,
-  styled,
-} from '@mui/material';
+import { Box, Button, Grid, IconButton, Typography } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -15,6 +8,8 @@ import DirectionsIcon from '@mui/icons-material/Directions';
 import './dashboard.css';
 import HomeNavBar from '../../navs/homeNavBar';
 import { Link as LinkRouter } from 'react-router-dom';
+import TextScroller from '../../animated-text';
+import CustomAvatar from '../../avatar';
 
 export const DashBoard = ({
   scrollToDashboard,
@@ -122,15 +117,18 @@ export const DashBoard = ({
             scrollToContactMe={scrollToContactMe}
             handleScroll={handleScroll}
           />
-          <Box p={2} sx={{ textAlign: 'center' }}>
-            <Box
-              sx={{ width: '100%' }}
-              textAlign="center"
-              component="img"
-              alt={'logo Zenika'}
-              src={'/sofiane.png'}
-            />
+          <Box p={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <CustomAvatar src="/sofiane-avt.png" width={200} height={300} />
           </Box>
+        </Box>
+        <Box display="flex" justifyContent="center">
+          <TextScroller
+            texts={[
+              'A Software Engineer',
+              'A Problem Solver',
+              'A Full Stack Developer',
+            ]}
+          />
         </Box>
       </Grid>
       <Grid item xs={12} sx={{ bgcolor: '#1e1d1e' }}>
