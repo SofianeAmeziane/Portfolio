@@ -61,16 +61,14 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
       justifyContent="center"
     >
       <Grid item p={8} textAlign="center" xs={12} sm={8} md={6}>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }} mb={8}>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }} mb={4}>
           <Typography
             variant="h4"
             component="h4"
             textAlign="center"
             sx={{
               fontWeight: 'bold',
-              border: 6,
-              p: '15px 70px',
-              letterSpacing: 8,
+              letterSpacing: 4,
             }}
           >
             CONTACT

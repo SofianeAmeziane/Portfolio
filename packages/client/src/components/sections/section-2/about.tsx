@@ -67,9 +67,7 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
             textAlign="center"
             sx={{
               fontWeight: 'bold',
-              border: 6,
-              p: '15px 70px',
-              letterSpacing: 8,
+              letterSpacing: 4,
             }}
           >
             ABOUT ME
@@ -149,12 +147,10 @@ export const About = ({ scrollToAbout, scrollToSkills }: any) => {
                 textAlign="center"
                 sx={{
                   fontWeight: 'bold',
-                  border: 6,
-                  p: '15px 70px',
-                  letterSpacing: 8,
+                  letterSpacing: 4,
                 }}
               >
-                SKILLS
+                Skills and Cretifications
               </Typography>
             </Box>
           </Grid>

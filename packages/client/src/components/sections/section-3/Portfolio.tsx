@@ -23,12 +23,11 @@ export const Portfolio = ({ scrollToPortfolio }: any) => {
         <Typography
           variant="h4"
           component="h4"
+          textAlign="center"
           sx={{
             color: 'white',
             fontWeight: 'bold',
-            border: 6,
-            p: '15px 70px',
-            letterSpacing: 8,
+            letterSpacing: 4,
           }}
         >
           Professional Experience
