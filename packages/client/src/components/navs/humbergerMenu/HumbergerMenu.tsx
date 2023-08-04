@@ -11,6 +11,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { useTranslation } from 'react-i18next';
+import { LanguagePopover } from '../../languagePopover';
 
 export const HumbergerMenu = ({
   scrollToAbout,
@@ -19,6 +21,7 @@ export const HumbergerMenu = ({
   scrollToContactMe,
   handleScrollSection,
 }: any) => {
+  const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -66,21 +69,21 @@ export const HumbergerMenu = ({
                   sx={{ color: 'white' }}
                   onClick={() => handleScrollSection(scrollToAbout)}
                 >
-                  About Me
+                  {t('navBar:aboutMe')}
                 </Button>
                 <Button
                   variant="text"
                   sx={{ color: 'white' }}
                   onClick={() => handleScrollSection(scrollToSkills)}
                 >
-                  Skills
+                  {t('navBar:skills')}
                 </Button>
                 <Button
                   variant="text"
                   sx={{ color: 'white' }}
                   onClick={() => handleScrollSection(scrollToPortfolio)}
                 >
-                  Portfolio
+                  {t('navBar:portfolio')}
                 </Button>
                 <Button
                   sx={{
@@ -94,8 +97,9 @@ export const HumbergerMenu = ({
                   }}
                   onClick={() => handleScrollSection(scrollToContactMe)}
                 >
-                  Contact Me
+                  {t('navBar:contactMe')}
                 </Button>
+                <LanguagePopover />
               </Box>
             </Grid>
             <Grid item xs={4}>
@@ -113,10 +117,10 @@ export const HumbergerMenu = ({
                     fontWeight: 'bold',
                   }}
                 >
-                  My Name Is Sofiane
+                  {t('dashboardPage:myName')}
                 </Typography>
                 <Typography component="h5" variant="h5">
-                  I Am A Developer
+                  {t('dashboardPage:myJob')}
                 </Typography>
                 <Box sx={{ mt: 2 }}>
                   <IconButton

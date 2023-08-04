@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import CarouselSlider from '../../carousel/CarouselSlider';
 import { CarouselProvider } from 'pure-react-carousel';
 import './Portfolio.css';
+import { useTranslation } from 'react-i18next';
 
 export const Portfolio = ({ scrollToPortfolio }: any) => {
+  const { t } = useTranslation();
   const [slideCount, setSlideCount] = useState(2);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -30,7 +32,7 @@ export const Portfolio = ({ scrollToPortfolio }: any) => {
             letterSpacing: 4,
           }}
         >
-          Professional Experience
+          {t('portfolioPage:pageTitle')}
         </Typography>
       </Box>
       <Box p={4} textAlign="center">

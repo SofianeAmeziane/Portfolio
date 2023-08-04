@@ -1,5 +1,6 @@
 import { Box, Button } from '@mui/material';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const HomeNavBar = ({
   scrollToAbout,
@@ -8,6 +9,7 @@ const HomeNavBar = ({
   scrollToContactMe,
   handleScroll,
 }: any) => {
+  const { t } = useTranslation();
   return (
     <Box
       display={{ xs: 'none', md: 'flex' }}
@@ -22,21 +24,21 @@ const HomeNavBar = ({
         variant="text"
         sx={{ color: 'white' }}
       >
-        About Me
+        {t('navBar:aboutMe')}
       </Button>
       <Button
         onClick={() => handleScroll(scrollToSkills)}
         variant="text"
         sx={{ color: 'white' }}
       >
-        Skills
+        {t('navBar:skills')}
       </Button>
       <Button
         onClick={() => handleScroll(scrollToPortfolio)}
         variant="text"
         sx={{ color: 'white' }}
       >
-        Portfolio
+        {t('navBar:portfolio')}
       </Button>
       <Button
         onClick={() => handleScroll(scrollToContactMe)}
@@ -50,7 +52,7 @@ const HomeNavBar = ({
           borderRadius: 8,
         }}
       >
-        Contact Me
+        {t('navBar:contactMe')}
       </Button>
     </Box>
   );

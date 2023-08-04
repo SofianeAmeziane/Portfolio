@@ -10,6 +10,8 @@ import HomeNavBar from '../../navs/homeNavBar';
 import { Link as LinkRouter } from 'react-router-dom';
 import TextScroller from '../../animated-text';
 import CustomAvatar from '../../avatar';
+import { useTranslation } from 'react-i18next';
+import { LanguagePopover } from '../../languagePopover';
 
 export const DashBoard = ({
   scrollToDashboard,
@@ -19,6 +21,7 @@ export const DashBoard = ({
   scrollToContactMe,
   handleScroll,
 }: any) => {
+  const { t } = useTranslation();
   return (
     <Grid ref={scrollToDashboard} container minHeight="100vh">
       <Grid
@@ -37,29 +40,28 @@ export const DashBoard = ({
           </LinkRouter>
           <Box mt={10}>
             <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
-              Hi, I am
+              {t('dashboardPage:hi')}
             </Typography>
             <Typography
               variant="h3"
               pt={3}
               sx={{ fontStyle: 'italic', fontWeight: 'bold' }}
             >
-              Sofiane Ameziane
+              {t('dashboardPage:myName')}
             </Typography>
             <Typography
               component="div"
               variant="body1"
               sx={{ fontStyle: 'italic', fontWeight: 'bold' }}
             >
-              Full-Stack Developer
+              {t('dashboardPage:myJob')}
             </Typography>
             <Typography
               component="div"
               variant="body1"
               sx={{ color: 'text.secondary' }}
             >
-              I build accessible, inclusive products and digital experiences for
-              the web.
+              {t('dashboardPage:jobDescription')}
             </Typography>
           </Box>
           <Box sx={{ mt: 6 }}>
@@ -98,6 +100,16 @@ export const DashBoard = ({
           </Box>
         </Box>
       </Grid>
+      {/* <Grid
+        item
+        xs={12}
+        md={1}
+        p="4px 50px"
+        textAlign="center"
+        sx={{ pt: { xs: 0, md: 6 } }}
+      >
+        <LanguagePopover />
+      </Grid> */}
       <Grid item xs={12} md={7}>
         <Box
           p="0px 120px"
@@ -124,9 +136,9 @@ export const DashBoard = ({
         <Box display="flex" justifyContent="center">
           <TextScroller
             texts={[
-              'A Software Engineer',
-              'A Problem Solver',
-              'A Full Stack Developer',
+              t('dashboardPage:TextScroller-1'),
+              t('dashboardPage:TextScroller-2'),
+              t('dashboardPage:TextScroller-3'),
             ]}
           />
         </Box>
@@ -135,20 +147,17 @@ export const DashBoard = ({
         <Grid container spacing={4} p={2} textAlign="center">
           <Grid item xs={6} md={3}>
             <Typography component="body" color="white">
-              Highly skilled at progressive enhancement, design systems & UI
-              Engineering.
+              {t('dashboardPage:selfDescription-1')}
             </Typography>
           </Grid>
           <Grid item xs={6} md={3}>
             <Typography component="body" color="white">
-              Proven experience building successful products for clients across
-              several countries.
+              {t('dashboardPage:selfDescription-2')}
             </Typography>
           </Grid>
           <Grid item xs={6} md={3}>
             <Typography component="body" color="white">
-              Interested in working together? We should queue up a time to chat.
-              I’ll buy the coffee.
+              {t('dashboardPage:interestedText')}
             </Typography>
           </Grid>{' '}
           <Grid item xs={6} md={3} display="flex" alignItems="center">
@@ -170,7 +179,9 @@ export const DashBoard = ({
                 color: 'aqua',
               }}
             >
-              <Typography pr={1}>Let's do this</Typography>
+              <Typography pr={1}>
+                {t('dashboardPage:interestedButton')}
+              </Typography>
               <DirectionsIcon fontSize="large" />
             </Button>
           </Grid>

@@ -5,8 +5,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useTranslation } from 'react-i18next';
 
 export const Footer = ({ scrollToDashboard, handleScroll }: any) => {
+  const { t } = useTranslation();
   return (
     <Grid
       pb={4}
@@ -32,7 +34,7 @@ export const Footer = ({ scrollToDashboard, handleScroll }: any) => {
           sx={{ fontWeight: 'bold', color: 'white' }}
           textAlign="center"
         >
-          BACK TO TOP
+          {t('footerPage:back-button')}
         </Typography>
       </Grid>
 

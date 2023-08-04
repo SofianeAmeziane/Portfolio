@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, Chip, Grid } from '@mui/material';
 
 export default function ActionAreaCard({
-  company,
+  jobTitle,
   description,
   image,
   skills,
@@ -28,7 +28,7 @@ export default function ActionAreaCard({
         />
         <CardContent sx={{ minHeight: '24vh' }}>
           <Typography gutterBottom variant="h5" component="div">
-            {company}
+            {jobTitle}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {description}

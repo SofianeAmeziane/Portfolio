@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import HumbergerMenu from '../humbergerMenu';
+import { useTranslation } from 'react-i18next';
+import { LanguagePopover } from '../../languagePopover';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'center',
@@ -17,6 +19,7 @@ const FixedNavBar = ({
   scrollToContactMe,
   handleScrollSection,
 }: any) => {
+  const { t } = useTranslation();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,6 +40,7 @@ const FixedNavBar = ({
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
+
   return (
     <AppBar
       position="fixed"
@@ -49,7 +53,6 @@ const FixedNavBar = ({
         <Box onClick={() => handleScrollSection(scrollToDashboard)}>
           <img src={'../../LogoSofiane.ico'} alt="sofiane" loading="lazy" />
         </Box>
-
         <HumbergerMenu
           scrollToAbout={scrollToAbout}
           scrollToSkills={scrollToSkills}
@@ -70,21 +73,21 @@ const FixedNavBar = ({
             sx={{ color: 'white' }}
             onClick={() => handleScrollSection(scrollToAbout)}
           >
-            About Me
+            {t('navBar:aboutMe')}
           </Button>
           <Button
             variant="text"
             sx={{ color: 'white' }}
             onClick={() => handleScrollSection(scrollToSkills)}
           >
-            Skills
+            {t('navBar:skills')}
           </Button>
           <Button
             variant="text"
             sx={{ color: 'white' }}
             onClick={() => handleScrollSection(scrollToPortfolio)}
           >
-            Portfolio
+            {t('navBar:portfolio')}
           </Button>
           <Button
             sx={{
@@ -98,8 +101,9 @@ const FixedNavBar = ({
             }}
             onClick={() => handleScrollSection(scrollToContactMe)}
           >
-            Contact Me
+            {t('navBar:contactMe')}
           </Button>
+          <LanguagePopover />
         </Box>
       </StyledToolbar>
     </AppBar>

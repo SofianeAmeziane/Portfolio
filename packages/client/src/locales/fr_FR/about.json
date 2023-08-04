@@ -1,0 +1,16 @@
+{
+  "title-1": "Sur Moi",
+  "aboutMeText": "Ayant une maîtrise en informatique et plus de 4 ans d'expérience en tant que développeur Full Stack. J'ai eu l'opportunité de travailler avec l'écosystème JAVA avant de me spécialiser dans les technologies JavaScript, notamment avec ReactJS, NextJS et NodeJs. Curieux et passionné par la programmation et la résolution de problèmes, je suis toujours prêt à relever de nouveaux défis et de nouvelles technologies à découvrir.",
+  "explore": "Explorer",
+  "design": "Design",
+  "designText": "Je ne suis probablement pas le designer typique placé derrière un plan de travail Illustrator ajustant les pixels, mais je conçois. Immergé dans les feuilles de style, peaufinant les tailles de police et envisageant les mises en page, c'est là que vous me trouverez (~_^). Je m'engage à créer des expériences utilisateur fluides tout en restant à la mode.",
+  "developement": "Developement",
+  "developementText": "Dans la création d'applications JavaScript, je suis équipé des bons outils et je peux absolument fonctionner indépendamment d'eux pour fournir des solutions rapides et résilientes optimisées pour l'échelle - les performances et l'évolutivité sont des priorités sur mon radar.",
+  "maintenance": "Maintenance",
+  "maintenanceText": "Votre stratégie de contenu est peut-être pertinente, mais c'est toujours une bonne idée de l'améliorer en créant de nouveaux types de contenu. Votre contenu Web doit également être à jour. Si vous avez écrit un article qui a été publié il y a des années, il se peut qu'il ne soit pas pertinent pour le moment et que certaines informations aient besoin d'être mises à jour.",
+  "skills-title": "Compétences et certification",
+  "using-now": "Utiliser maintenant : ",
+  "learning": "Apprentissage: ",
+  "readMore": "En savoir plus",
+  "close": "fermer"
+}

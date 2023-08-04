@@ -9,10 +9,11 @@ import {
 } from '@mui/material';
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-
+import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 
 export const ContactMe = ({ scrollToContactMe }: any) => {
+  const { t } = useTranslation();
   const { register, handleSubmit } = useForm();
   const [open, setOpen] = useState(false);
 
@@ -71,7 +72,7 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
               letterSpacing: 4,
             }}
           >
-            CONTACT
+            {t('contactPage:pageTitle')}
           </Typography>
         </Box>
         <Grid item p={4}>
@@ -81,7 +82,7 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
               type="text"
               variant="filled"
               color="secondary"
-              label="Name"
+              label={t('contactPage:name')}
               fullWidth
               required
               sx={{ mb: 4 }}
@@ -91,7 +92,7 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
               type="email"
               variant="filled"
               color="secondary"
-              label="Email"
+              label={t('contactPage:email')}
               fullWidth
               required
               sx={{ mb: 4 }}
@@ -101,7 +102,7 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
               type="number"
               variant="filled"
               color="secondary"
-              label="Phone Number"
+              label={t('contactPage:phone-number')}
               fullWidth
               required
               sx={{ mb: 4 }}
@@ -111,7 +112,7 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
               type="text"
               variant="filled"
               color="secondary"
-              label="Message"
+              label={t('contactPage:message')}
               fullWidth
               required
               sx={{ mb: 4 }}
@@ -119,7 +120,7 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
               rows={4}
             />
             <Button variant="outlined" color="secondary" type="submit">
-              Submit
+              {t('contactPage:submit-button')}
             </Button>
           </form>
           <Snackbar
@@ -136,7 +137,7 @@ export const ContactMe = ({ scrollToContactMe }: any) => {
               severity="success"
               sx={{ width: '100%' }}
             >
-              Thank you, your submission has been sent.
+              {t('contactPage:response')}
             </Alert>
           </Snackbar>
         </Grid>

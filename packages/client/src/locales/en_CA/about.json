@@ -1,0 +1,16 @@
+{
+  "title-1": "About Me",
+  "aboutMeText": "Having a master's degree in computer science and more than 4 years of experience as a Full Stack developer. I had the opportunity to work with the JAVA ecosystem before specializing in JavaScript technologies, particularly with ReactJS, NextJS and NodeJs. Curious and passionate about programming and problem solving, I am always ready for new challenges and new technologies to discover.",
+  "explore": "Explore",
+  "design": "Design",
+  "designText": "I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels, but I design. Immersed in stylesheets tweaking font sizes and contemplating layouts is where you'll find me (~_^). I'm committed to creating fluent user experiences while staying fashionable.",
+  "developement": "Developement",
+  "developementText": "In building JavaScript applications, I'm equipped with just the right tools, and can absolutely function independently of them to deliver fast, resilient solutions optimized for scale — performance and scalabilty are priorities on my radar.",
+  "maintenance": "Maintenance",
+  "maintenanceText": "Your content strategy might be on point but it’s always a good idea to improve it by creating new types of content. Your web content also needs to be up to date. If you wrote a post that was published years ago, it might not be relevant right now and some of the information might need to be updated.",
+  "skills-title": "Skills and Cretification",
+  "using-now": "Using Now: ",
+  "learning": "Learning: ",
+  "readMore": "Read More",
+  "close": "Close"
+}
