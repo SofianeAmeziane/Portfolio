@@ -50,7 +50,7 @@ const FixedNavBar = ({
       }}
     >
       <StyledToolbar variant="dense">
-        <Box onClick={() => handleScrollSection(scrollToDashboard)}>
+        <Box pl={2} onClick={() => handleScrollSection(scrollToDashboard)}>
           <img src={'../../LogoSofiane.ico'} alt="sofiane" loading="lazy" />
         </Box>
         <HumbergerMenu
@@ -63,7 +63,7 @@ const FixedNavBar = ({
         <Box
           display={{ xs: 'none', md: 'flex' }}
           sx={{
-            width: '50%',
+            width: '60%',
             justifyContent: 'space-around',
             textAlign: 'end',
           }}

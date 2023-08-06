@@ -100,19 +100,9 @@ export const DashBoard = ({
           </Box>
         </Box>
       </Grid>
-      {/* <Grid
-        item
-        xs={12}
-        md={1}
-        p="4px 50px"
-        textAlign="center"
-        sx={{ pt: { xs: 0, md: 6 } }}
-      >
-        <LanguagePopover />
-      </Grid> */}
       <Grid item xs={12} md={7}>
         <Box
-          p="0px 120px"
+          p="0px 50px"
           sx={{
             background: 'black',
             pt: 4,

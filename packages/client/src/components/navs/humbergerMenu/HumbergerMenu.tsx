@@ -99,9 +99,12 @@ export const HumbergerMenu = ({
                 >
                   {t('navBar:contactMe')}
                 </Button>
+              </Box>
+              <Box display="flex" justifyContent="center">
                 <LanguagePopover />
               </Box>
             </Grid>
+
             <Grid item xs={4}>
               <Grid
                 container
