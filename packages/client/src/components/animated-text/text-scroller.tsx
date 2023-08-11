@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { styled } from '@mui/material/styles';
 import Typewriter from 'typewriter-effect';
 
-const TypeWriterH1 = styled('h1')(({ theme }) => ({
+const TypeWriterH1 = styled('h1')(() => ({
   fontSize: '15px',
   color: `#343a40`,
   animation: '1s cubic-bezier(0.215, 0.61, 0.355, 1) both',
 }));
-const TextScroller = ({ texts }: any) => {
+
+interface ITextScroller {
+  texts: string[];
+}
+
+const TextScroller: FC<ITextScroller> = ({ texts }) => {
   return (
     <TypeWriterH1>
       <Typewriter

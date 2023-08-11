@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { FC, MutableRefObject, ReactNode } from 'react';
 import FixedNavBar from '../navs/nav';
 import { Box } from '@mui/material';
 
-export default function Layout({
+interface ILayout {
+  scrollToDashboard: MutableRefObject<HTMLDivElement | null>;
+  scrollToAbout: MutableRefObject<HTMLDivElement | null>;
+  scrollToSkills: MutableRefObject<HTMLDivElement | null>;
+  scrollToPortfolio: MutableRefObject<HTMLDivElement | null>;
+  scrollToContactMe: MutableRefObject<HTMLDivElement | null>;
+  handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
+  children: ReactNode;
+}
+
+const Layout: FC<ILayout> = ({
   scrollToDashboard,
   scrollToAbout,
   scrollToSkills,
@@ -10,7 +20,7 @@ export default function Layout({
   scrollToContactMe,
   handleScroll,
   children,
-}: any) {
+}) => {
   return (
     <Box sx={{ bgcolor: '#C4C4C4' }}>
       <FixedNavBar
@@ -24,4 +34,6 @@ export default function Layout({
       <Box>{children}</Box>
     </Box>
   );
-}
+};
+
+export default Layout;

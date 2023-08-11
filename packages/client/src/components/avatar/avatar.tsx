@@ -1,15 +1,13 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import Avatar from '@mui/material/Avatar';
 
-export default function CustomAvatar({
-  src,
-  width,
-  height,
-}: {
+interface ICustomAvatar {
   src: string;
   width: number;
   height: number;
-}) {
+}
+
+const CustomAvatar: FC<ICustomAvatar> = ({ src, width, height }) => {
   return (
     <Avatar
       alt="sofiane "
@@ -17,4 +15,5 @@ export default function CustomAvatar({
       sx={{ width: { width }, height: { height } }}
     />
   );
-}
+};
+export default CustomAvatar;

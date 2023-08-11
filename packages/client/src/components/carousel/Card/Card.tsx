@@ -1,24 +1,25 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Chip, Grid } from '@mui/material';
 
-export default function ActionAreaCard({
+interface IActionAreaCard {
+  jobTitle: string;
+  description: string;
+  image: string;
+  skills: string[];
+}
+
+const ActionAreaCard: FC<IActionAreaCard> = ({
   jobTitle,
   description,
   image,
   skills,
-}: any) {
-  console.log({ skills });
-
+}) => {
   return (
-    <Card
-      sx={{
-        minHeight: '70vh',
-      }}
-    >
+    <Card sx={{ minHeight: '70vh' }}>
       <CardActionArea>
         <CardMedia
           sx={{ height: '120px' }}
@@ -58,4 +59,6 @@ export default function ActionAreaCard({
       </CardActionArea>
     </Card>
   );
-}
+};
+
+export default ActionAreaCard;

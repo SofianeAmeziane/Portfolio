@@ -4103,7 +4103,7 @@ cli-width@^3.0.0:
     react-animated-cursor "^2.7.0"
     react-dom "^18.2.0"
     react-hook-form "^7.45.2"
-    react-i18next "^9.0.10"
+    react-i18next "^11.8.15"
     react-material-ui-carousel "^3.4.2"
     react-router-dom "^6.14.1"
     react-scripts "5.0.1"
@@ -4506,7 +4506,7 @@ css-has-pseudo@^3.0.4:
   dependencies:
     postcss-selector-parser "^6.0.9"
 
-css-loader@^6.5.1:
+css-loader@^6.5.1, css-loader@^6.8.1:
   version "6.8.1"
   resolved "https://registry.npmjs.org/css-loader/-/css-loader-6.8.1.tgz"
   integrity sha512-xDAXtEVGlD0gJ07iclwWVkLoZOpEvAWaSyf6W18S2pOC//K8+qUDIx8IIT3D+HjnmkJPQeesOPv5aiUaJsCM2g==

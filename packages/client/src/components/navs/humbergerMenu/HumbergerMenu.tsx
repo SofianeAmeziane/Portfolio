@@ -6,7 +6,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React, { MutableRefObject, FC } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -14,13 +14,21 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { useTranslation } from 'react-i18next';
 import { LanguagePopover } from '../../languagePopover';
 
-export const HumbergerMenu = ({
+interface IHumbergerMenu {
+  scrollToAbout: MutableRefObject<HTMLDivElement | null>;
+  scrollToSkills: MutableRefObject<HTMLDivElement | null>;
+  scrollToPortfolio: MutableRefObject<HTMLDivElement | null>;
+  scrollToContactMe: MutableRefObject<HTMLDivElement | null>;
+  handleScrollSection: (ref: MutableRefObject<HTMLDivElement | null>) => void;
+}
+
+export const HumbergerMenu: FC<IHumbergerMenu> = ({
   scrollToAbout,
   scrollToSkills,
   scrollToPortfolio,
   scrollToContactMe,
   handleScrollSection,
-}: any) => {
+}) => {
   const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
 

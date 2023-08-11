@@ -1,11 +1,15 @@
 import { Box, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { FC, MutableRefObject, useState } from 'react';
 import CarouselSlider from '../../carousel/CarouselSlider';
 import { CarouselProvider } from 'pure-react-carousel';
 import './Portfolio.css';
 import { useTranslation } from 'react-i18next';
 
-export const Portfolio = ({ scrollToPortfolio }: any) => {
+interface IPortfolio {
+  scrollToPortfolio: MutableRefObject<HTMLDivElement | null>;
+}
+
+export const Portfolio: FC<IPortfolio> = ({ scrollToPortfolio }) => {
   const { t } = useTranslation();
   const [slideCount, setSlideCount] = useState(2);
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -7,12 +7,16 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import React, { useRef, useState } from 'react';
+import React, { FC, MutableRefObject, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 
-export const ContactMe = ({ scrollToContactMe }: any) => {
+interface IContactMe {
+  scrollToContactMe: MutableRefObject<HTMLDivElement | null>;
+}
+
+export const ContactMe: FC<IContactMe> = ({ scrollToContactMe }) => {
   const { t } = useTranslation();
   const { register, handleSubmit } = useForm();
   const [open, setOpen] = useState(false);

@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { FC, MutableRefObject } from 'react';
 import { Box, Button, Grid, IconButton, Typography } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import DirectionsIcon from '@mui/icons-material/Directions';
-import './dashboard.css';
 import HomeNavBar from '../../navs/homeNavBar';
 import { Link as LinkRouter } from 'react-router-dom';
 import TextScroller from '../../animated-text';
 import CustomAvatar from '../../avatar';
 import { useTranslation } from 'react-i18next';
-import { LanguagePopover } from '../../languagePopover';
 
-export const DashBoard = ({
+interface IDashBoard {
+  scrollToDashboard: MutableRefObject<HTMLDivElement | null>;
+  scrollToAbout: MutableRefObject<HTMLDivElement | null>;
+  scrollToSkills: MutableRefObject<HTMLDivElement | null>;
+  scrollToPortfolio: MutableRefObject<HTMLDivElement | null>;
+  scrollToContactMe: MutableRefObject<HTMLDivElement | null>;
+  handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
+}
+
+export const DashBoard: FC<IDashBoard> = ({
   scrollToDashboard,
   scrollToAbout,
   scrollToSkills,
   scrollToPortfolio,
   scrollToContactMe,
   handleScroll,
-}: any) => {
+}) => {
   const { t } = useTranslation();
   return (
     <Grid ref={scrollToDashboard} container minHeight="100vh">
@@ -112,7 +119,6 @@ export const DashBoard = ({
           }}
         >
           <HomeNavBar
-            scrollToDashboard={scrollToDashboard}
             scrollToAbout={scrollToAbout}
             scrollToSkills={scrollToSkills}
             scrollToPortfolio={scrollToPortfolio}

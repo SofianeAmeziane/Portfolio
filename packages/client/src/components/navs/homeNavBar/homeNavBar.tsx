@@ -1,15 +1,24 @@
 import { Box, Button } from '@mui/material';
-import React from 'react';
+import React, { FC, MutableRefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const HomeNavBar = ({
+interface IHomeNavBar {
+  scrollToAbout: MutableRefObject<HTMLDivElement | null>;
+  scrollToSkills: MutableRefObject<HTMLDivElement | null>;
+  scrollToPortfolio: MutableRefObject<HTMLDivElement | null>;
+  scrollToContactMe: MutableRefObject<HTMLDivElement | null>;
+  handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
+}
+
+const HomeNavBar: FC<IHomeNavBar> = ({
   scrollToAbout,
   scrollToSkills,
   scrollToPortfolio,
   scrollToContactMe,
   handleScroll,
-}: any) => {
+}) => {
   const { t } = useTranslation();
+
   return (
     <Box
       display={{ xs: 'none', md: 'flex' }}

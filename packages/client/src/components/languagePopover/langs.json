@@ -1,0 +1,12 @@
+[
+  {
+    "value": "en_CA",
+    "label": "English",
+    "icon": "/assets/icons/ic_flag_en_CA.svg"
+  },
+  {
+    "value": "fr_CA",
+    "label": "French",
+    "icon": "/assets/icons/ic_flag_fr_CA.svg"
+  }
+]

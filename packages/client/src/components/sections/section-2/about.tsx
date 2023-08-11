@@ -1,5 +1,5 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { FC, MutableRefObject, ReactNode, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const skillsList = ['html', 'css', 'sass', 'javascript', 'typescript', 'react'];
@@ -20,15 +20,13 @@ const Item = ({ title }: { title: string }) => {
   );
 };
 
-const Description = ({
-  title,
-  children,
-  icon,
-}: {
+interface IDescription {
   title: string;
-  children: any;
+  children: ReactNode;
   icon: string;
-}) => {
+}
+
+const Description = ({ title, children, icon }: IDescription) => {
   return (
     <Box textAlign="center">
       <Box
@@ -50,7 +48,12 @@ const Description = ({
   );
 };
 
-export const About = ({ scrollToAbout, scrollToSkills }: any) => {
+interface IAbout {
+  scrollToAbout: MutableRefObject<HTMLDivElement | null>;
+  scrollToSkills: MutableRefObject<HTMLDivElement | null>;
+}
+
+export const About: FC<IAbout> = ({ scrollToAbout, scrollToSkills }) => {
   const [moreSkills, setMoreSkills] = useState(false);
   const { t } = useTranslation();
 

@@ -1,5 +1,5 @@
 import { Grid, IconButton, Typography } from '@mui/material';
-import React from 'react';
+import React, { FC, MutableRefObject } from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -7,7 +7,12 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useTranslation } from 'react-i18next';
 
-export const Footer = ({ scrollToDashboard, handleScroll }: any) => {
+interface IFooter {
+  scrollToDashboard: MutableRefObject<HTMLDivElement | null>;
+  handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
+}
+
+export const Footer: FC<IFooter> = ({ scrollToDashboard, handleScroll }) => {
   const { t } = useTranslation();
   return (
     <Grid
@@ -79,6 +84,7 @@ export const Footer = ({ scrollToDashboard, handleScroll }: any) => {
           @2023 Ameziane Sofiane
           <span
             style={{
+              marginLeft: 2,
               color: 'GrayText',
               fontWeight: 'normal',
               fontFamily: 'cursive',

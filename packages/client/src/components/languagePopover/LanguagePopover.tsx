@@ -1,20 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Box, MenuItem, Stack, IconButton, Popover } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import React from 'react';
+import LANGS from './langs.json';
 
-const LANGS = [
-  {
-    value: 'en_CA',
-    label: 'English',
-    icon: '/assets/icons/ic_flag_en_CA.svg',
-  },
-  {
-    value: 'fr_CA',
-    label: 'French',
-    icon: '/assets/icons/ic_flag_fr_CA.svg',
-  },
-];
 export const LanguagePopover = () => {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState<null>(null);
@@ -38,7 +26,6 @@ export const LanguagePopover = () => {
   const langDetailFind = LANGS.find((lang) => lang.value === i18n.language);
   return (
     <div>
-      {' '}
       <IconButton
         onClick={handleOpen}
         sx={{

@@ -1,7 +1,6 @@
-import React, { useRef } from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 import Layout from '../layout/layout';
 import { Box } from '@mui/material';
-import './index.css';
 import DashBoard from '../sections/section-1';
 import About from '../sections/section-2';
 import Portfolio from '../sections/section-3';
@@ -14,7 +13,8 @@ export const HomePage = () => {
   const scrollToSkills = useRef<null | HTMLDivElement>(null);
   const scrollToPortfolio = useRef<null | HTMLDivElement>(null);
   const scrollToContactMe = useRef<null | HTMLDivElement>(null);
-  const handleScroll = (ref: any) => ref?.current?.scrollIntoView();
+  const handleScroll = (ref: MutableRefObject<HTMLDivElement | null>) =>
+    ref?.current?.scrollIntoView();
 
   return (
     <Box>

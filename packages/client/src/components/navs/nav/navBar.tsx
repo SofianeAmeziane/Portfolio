@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, MutableRefObject, useEffect, useState } from 'react';
 import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import HumbergerMenu from '../humbergerMenu';
@@ -11,14 +11,23 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: 'space-between',
 }));
 
-const FixedNavBar = ({
+interface IFixedNavBar {
+  scrollToDashboard: MutableRefObject<HTMLDivElement | null>;
+  scrollToAbout: MutableRefObject<HTMLDivElement | null>;
+  scrollToSkills: MutableRefObject<HTMLDivElement | null>;
+  scrollToPortfolio: MutableRefObject<HTMLDivElement | null>;
+  scrollToContactMe: MutableRefObject<HTMLDivElement | null>;
+  handleScrollSection: (ref: MutableRefObject<HTMLDivElement | null>) => void;
+}
+
+const FixedNavBar: FC<IFixedNavBar> = ({
   scrollToDashboard,
   scrollToAbout,
   scrollToSkills,
   scrollToPortfolio,
   scrollToContactMe,
   handleScrollSection,
-}: any) => {
+}) => {
   const { t } = useTranslation();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
