@@ -30,13 +30,15 @@ export const DashBoard: FC<IDashBoard> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <Grid ref={scrollToDashboard} container minHeight="100vh">
+    <Box ref={scrollToDashboard} minHeight="100vh">
+      <Grid container direction='row'>
       <Grid
         item
         xs={12}
         md={5}
         p="4px 50px"
         textAlign="center"
+        minHeight='85vh'
         sx={{ pt: { xs: 0, md: 4 } }}
       >
         <Box p={2}>
@@ -109,6 +111,7 @@ export const DashBoard: FC<IDashBoard> = ({
       </Grid>
       <Grid item xs={12} md={7}>
         <Box
+         minHeight='76vh'
           p="0px 50px"
           sx={{
             background: 'black',
@@ -129,7 +132,7 @@ export const DashBoard: FC<IDashBoard> = ({
             <CustomAvatar src="/sofiane-avt.png" width={200} height={300} />
           </Box>
         </Box>
-        <Box display="flex" justifyContent="center">
+        <Box display="flex" justifyContent="center" alignItems='center'>
           <TextScroller
             texts={[
               t('dashboardPage:TextScroller-1'),
@@ -139,7 +142,8 @@ export const DashBoard: FC<IDashBoard> = ({
           />
         </Box>
       </Grid>
-      <Grid item xs={12} sx={{ bgcolor: '#1e1d1e' }}>
+      </Grid>
+      <Grid item xs={12} sx={{ bgcolor: '#1e1d1e', display:'flex', alignItems:'center' }}>
         <Grid container spacing={4} p={2} textAlign="center">
           <Grid item xs={6} md={3}>
             <Typography component="body" color="white">
@@ -156,7 +160,7 @@ export const DashBoard: FC<IDashBoard> = ({
               {t('dashboardPage:interestedText')}
             </Typography>
           </Grid>{' '}
-          <Grid item xs={6} md={3} display="flex" alignItems="center">
+          <Grid item xs={6} md={3} display="flex" alignItems="center" justifyContent='center' >
             <Button
               onClick={() => handleScroll(scrollToContactMe)}
               sx={{
@@ -183,6 +187,6 @@ export const DashBoard: FC<IDashBoard> = ({
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Box>
   );
 };
