@@ -30,15 +30,13 @@ export const DashBoard: FC<IDashBoard> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <Box ref={scrollToDashboard} minHeight="100vh">
-      <Grid container direction='row'>
+    <Box ref={scrollToDashboard} >
+      <Grid container direction='row' minHeight="100vh">
       <Grid
-        item
         xs={12}
         md={5}
         p="4px 50px"
         textAlign="center"
-        minHeight='85vh'
         sx={{ pt: { xs: 0, md: 4 } }}
       >
         <Box p={2}>
@@ -109,10 +107,10 @@ export const DashBoard: FC<IDashBoard> = ({
           </Box>
         </Box>
       </Grid>
-      <Grid item xs={12} md={7}>
+      <Grid xs={12} md={7} minHeight='80vh'>
         <Box
          minHeight='76vh'
-          p="0px 50px"
+          p="0px 80px"
           sx={{
             background: 'black',
             pt: 4,
@@ -132,7 +130,7 @@ export const DashBoard: FC<IDashBoard> = ({
             <CustomAvatar src="/sofiane-avt.png" width={200} height={300} />
           </Box>
         </Box>
-        <Box display="flex" justifyContent="center" alignItems='center'>
+        <Box display='flex' justifyContent='center' alignItems='center' minHeight='4vh'>
           <TextScroller
             texts={[
               t('dashboardPage:TextScroller-1'),
@@ -142,10 +140,8 @@ export const DashBoard: FC<IDashBoard> = ({
           />
         </Box>
       </Grid>
-      </Grid>
-      <Grid item xs={12} sx={{ bgcolor: '#1e1d1e', display:'flex', alignItems:'center' }}>
-        <Grid container spacing={4} p={2} textAlign="center">
-          <Grid item xs={6} md={3}>
+      <Grid  container columnSpacing={4}  p={2} textAlign="center"  sx={{ bgcolor: '#1e1d1e', display:'flex', alignItems:'center' }}>          
+          <Grid item  xs={6} md={3}>
             <Typography component="body" color="white">
               {t('dashboardPage:selfDescription-1')}
             </Typography>
@@ -159,7 +155,7 @@ export const DashBoard: FC<IDashBoard> = ({
             <Typography component="body" color="white">
               {t('dashboardPage:interestedText')}
             </Typography>
-          </Grid>{' '}
+          </Grid>
           <Grid item xs={6} md={3} display="flex" alignItems="center" justifyContent='center' >
             <Button
               onClick={() => handleScroll(scrollToContactMe)}
@@ -185,7 +181,7 @@ export const DashBoard: FC<IDashBoard> = ({
               <DirectionsIcon fontSize="large" />
             </Button>
           </Grid>
-        </Grid>
+          </Grid>
       </Grid>
     </Box>
   );
