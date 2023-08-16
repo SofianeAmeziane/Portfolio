@@ -22,7 +22,7 @@ const Layout: FC<ILayout> = ({
   children,
 }) => {
   return (
-    <Box sx={{ bgcolor: '#C4C4C4' }}>
+    <Box sx={{ bgcolor: '#F9FAFB' }}>
       <FixedNavBar
         scrollToDashboard={scrollToDashboard}
         scrollToAbout={scrollToAbout}
