@@ -152,7 +152,7 @@ export const DashBoard: FC<IDashBoard> = ({
         >
           <CustomAvatar
             variant="circular"
-            src="/sofiane-img-black-bg.png"
+            src="/sofiane.png"
             width={350}
             height={350}
           />
