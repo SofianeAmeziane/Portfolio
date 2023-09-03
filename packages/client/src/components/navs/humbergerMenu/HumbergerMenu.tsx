@@ -1,18 +1,15 @@
-import {
-  Backdrop,
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  Typography,
-} from '@mui/material';
-import React, { MutableRefObject, FC } from 'react';
+import { Box, IconButton } from '@mui/material';
+import React, { MutableRefObject, FC, useRef, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import { useTranslation } from 'react-i18next';
 import { LanguagePopover } from '../../languagePopover';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
 
 interface IHumbergerMenu {
   scrollToAbout: MutableRefObject<HTMLDivElement | null>;
@@ -30,15 +27,49 @@ export const HumbergerMenu: FC<IHumbergerMenu> = ({
   handleScrollSection,
 }) => {
   const { t } = useTranslation();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLButtonElement>(null);
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = () => {
+  const handleClose = (event: Event | React.SyntheticEvent) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
+      return;
+    }
     setOpen(false);
   };
+
+  function handleListKeyDown(event: React.KeyboardEvent) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    } else if (event.key === 'Escape') {
+      setOpen(false);
+    }
+  }
+
+  const handleSelectMenuItem = (
+    event: Event | React.SyntheticEvent,
+    section: MutableRefObject<HTMLDivElement | null>,
+  ) => {
+    handleClose(event);
+    handleScrollSection(section);
+  };
+
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current!.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
+
   return (
     <div>
       <Box display={{ xs: 'flex', md: 'none' }}>
@@ -47,117 +78,76 @@ export const HumbergerMenu: FC<IHumbergerMenu> = ({
           edge="start"
           color="inherit"
           aria-label="open drawer"
-          sx={{ mr: 2 }}
-          onClick={open ? handleClose : handleClickOpen}
+          ref={anchorRef}
+          id="composition-button"
+          aria-controls={open ? 'composition-menu' : undefined}
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleToggle}
         >
           {open ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Box>
-      <Box display={{ md: 'none' }}>
-        <Backdrop
-          sx={{
-            backgroundColor: 'rgba(0,0,0,0.9)',
-            zIndex: (theme) => theme.zIndex.drawer + 1,
-          }}
-          open={open}
-          onClick={handleClose}
-        >
-          <Grid
-            container
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justifyContent="start"
-            sx={{ height: '70%' }}
+      <Popper
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        placement="bottom-start"
+        transition
+        disablePortal
+      >
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{
+              transformOrigin:
+                placement === 'bottom-start' ? 'left top' : 'left bottom',
+            }}
           >
-            <Grid item xs={4}>
-              <Box sx={{ display: 'flex' }}>
-                <Button
-                  variant="text"
-                  sx={{ color: 'white' }}
-                  onClick={() => handleScrollSection(scrollToAbout)}
+            <Paper>
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList
+                  autoFocusItem={open}
+                  id="composition-menu"
+                  aria-labelledby="composition-button"
+                  onKeyDown={handleListKeyDown}
                 >
-                  {t('navBar:aboutMe')}
-                </Button>
-                <Button
-                  variant="text"
-                  sx={{ color: 'white' }}
-                  onClick={() => handleScrollSection(scrollToSkills)}
-                >
-                  {t('navBar:skills')}
-                </Button>
-                <Button
-                  variant="text"
-                  sx={{ color: 'white' }}
-                  onClick={() => handleScrollSection(scrollToPortfolio)}
-                >
-                  {t('navBar:portfolio')}
-                </Button>
-                <Button
-                  sx={{
-                    ':hover': {
-                      bgcolor: 'white',
-                      color: 'black',
-                    },
-                    color: 'black',
-                    background: 'white',
-                    borderRadius: 8,
-                  }}
-                  onClick={() => handleScrollSection(scrollToContactMe)}
-                >
-                  {t('navBar:contactMe')}
-                </Button>
-              </Box>
-              <Box display="flex" justifyContent="center">
-                <LanguagePopover />
-              </Box>
-            </Grid>
-
-            <Grid item xs={4}>
-              <Grid
-                container
-                spacing={0}
-                direction="column"
-                alignItems="center"
-                justifyContent="start"
-              >
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontStyle: 'italic',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {t('dashboardPage:myName')}
-                </Typography>
-                <Typography component="h5" variant="h5">
-                  {t('dashboardPage:myJob')}
-                </Typography>
-                <Box sx={{ mt: 2 }}>
-                  <IconButton
-                    aria-label="Linkedin.com"
-                    onClick={() =>
-                      window.open(
-                        'https://www.linkedin.com/in/sofiane-ameziane-9662b5172/',
-                      )
+                  <MenuItem sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <LanguagePopover />
+                  </MenuItem>
+                  <MenuItem
+                    onClick={(event) =>
+                      handleSelectMenuItem(event, scrollToAbout)
                     }
                   >
-                    <LinkedInIcon color="info" fontSize="large" />
-                  </IconButton>
-                  <IconButton
-                    aria-label="Github.com"
-                    onClick={() =>
-                      window.open('https://github.com/SofianeAmeziane')
+                    {t('navBar:aboutMe')}
+                  </MenuItem>
+                  <MenuItem
+                    onClick={(event) =>
+                      handleSelectMenuItem(event, scrollToSkills)
                     }
                   >
-                    <GitHubIcon color="info" fontSize="large" />
-                  </IconButton>
-                </Box>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Backdrop>
-      </Box>
+                    {t('navBar:skills')}
+                  </MenuItem>{' '}
+                  <MenuItem
+                    onClick={(event) =>
+                      handleSelectMenuItem(event, scrollToPortfolio)
+                    }
+                  >
+                    {t('navBar:portfolio')}
+                  </MenuItem>{' '}
+                  <MenuItem
+                    onClick={(event) =>
+                      handleSelectMenuItem(event, scrollToContactMe)
+                    }
+                  >
+                    {t('navBar:contactMe')}
+                  </MenuItem>
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
     </div>
   );
 };

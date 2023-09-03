@@ -72,8 +72,8 @@ const FixedNavBar: FC<IFixedNavBar> = ({
         <Box
           display={{ xs: 'none', md: 'flex' }}
           sx={{
-            width: '60%',
-            justifyContent: 'space-around',
+            width: { lg: '45%', md: '60%' },
+            justifyContent: 'space-between',
             textAlign: 'end',
           }}
         >

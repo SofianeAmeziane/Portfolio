@@ -30,95 +30,110 @@ export const DashBoard: FC<IDashBoard> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <Box ref={scrollToDashboard} >
-      <Grid container direction='row' minHeight="100vh">
+    <Grid ref={scrollToDashboard} minHeight="100vh" container direction="row">
       <Grid
+        minHeight="80vh"
         xs={12}
         md={5}
         p="4px 50px"
-        textAlign="center"
-        sx={{ pt: { xs: 0, md: 4 } }}
+        sx={{ pt: { xs: 0, md: 2 } }}
       >
-        <Box p={2}>
+        <Box pt={5} display="flex" justifyContent="center">
+          {' '}
           <LinkRouter to="/">
             <Box sx={{ display: { xs: 'none', md: 'block' } }}>
               <img src={'../../LogoSofiane.ico'} alt="sofiane" loading="lazy" />
             </Box>
           </LinkRouter>
-          <Box mt={10}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
-              {t('dashboardPage:hi')}
-            </Typography>
-            <Typography
-              variant="h3"
-              pt={3}
-              sx={{ fontStyle: 'italic', fontWeight: 'bold' }}
-            >
-              {t('dashboardPage:myName')}
-            </Typography>
-            <Typography
-              component="div"
-              variant="body1"
-              sx={{ fontStyle: 'italic', fontWeight: 'bold' }}
-            >
-              {t('dashboardPage:myJob')}
-            </Typography>
-            <Typography
-              component="div"
-              variant="body1"
-              sx={{ color: 'text.secondary' }}
-            >
-              {t('dashboardPage:jobDescription')}
-            </Typography>
-          </Box>
-          <Box sx={{ mt: 6 }}>
-            <IconButton
-              aria-label="Linkedin.com"
-              onClick={() =>
-                window.open(
-                  'https://www.linkedin.com/in/sofiane-ameziane-9662b5172/',
-                )
-              }
-            >
-              <LinkedInIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              aria-label="Github.com"
-              onClick={() => window.open('https://github.com/SofianeAmeziane')}
-            >
-              <GitHubIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              aria-label="Github.com"
-              onClick={() =>
-                window.open('https://www.facebook.com/sofiane.ameziane.52/')
-              }
-            >
-              <FacebookIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              aria-label="Github.com"
-              onClick={() =>
-                window.open('https://www.instagram.com/sofianeamz/')
-              }
-            >
-              <InstagramIcon fontSize="large" />
-            </IconButton>
+        </Box>
+
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          minHeight=" 66vh"
+        >
+          <Box textAlign="center" p={2}>
+            <Box mt={10}>
+              <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
+                {t('dashboardPage:hi')}
+              </Typography>
+              <Typography
+                variant="h3"
+                pt={3}
+                sx={{ fontStyle: 'italic', fontWeight: 'bold' }}
+              >
+                {t('dashboardPage:myName')}
+              </Typography>
+              <Typography
+                component="div"
+                variant="body1"
+                sx={{ fontStyle: 'italic', fontWeight: 'bold' }}
+              >
+                {t('dashboardPage:myJob')}
+              </Typography>
+              <Typography
+                component="div"
+                variant="body1"
+                sx={{ color: 'text.secondary' }}
+              >
+                {t('dashboardPage:jobDescription')}
+              </Typography>
+            </Box>
+            <Box sx={{ mt: 6 }}>
+              <IconButton
+                aria-label="Linkedin.com"
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/in/sofiane-ameziane-9662b5172/',
+                  )
+                }
+              >
+                <LinkedInIcon fontSize="large" />
+              </IconButton>
+              <IconButton
+                aria-label="Github.com"
+                onClick={() =>
+                  window.open('https://github.com/SofianeAmeziane')
+                }
+              >
+                <GitHubIcon fontSize="large" />
+              </IconButton>
+              <IconButton
+                aria-label="Github.com"
+                onClick={() =>
+                  window.open('https://www.facebook.com/sofiane.ameziane.52/')
+                }
+              >
+                <FacebookIcon fontSize="large" />
+              </IconButton>
+              <IconButton
+                aria-label="Github.com"
+                onClick={() =>
+                  window.open('https://www.instagram.com/sofianeamz/')
+                }
+              >
+                <InstagramIcon fontSize="large" />
+              </IconButton>
+            </Box>
           </Box>
         </Box>
       </Grid>
-      <Grid xs={12} md={7} minHeight='80vh'>
-        <Box
-         minHeight='76vh'
-          p="0px 80px"
-          sx={{
-            background: 'black',
-            pt: 4,
-            WebkitClipPath: {
-              md: 'polygon(10% 0, 100% 0%, 100% 100%, 0% 100%)',
-            },
-          }}
-        >
+      <Grid
+        container
+        direction="row"
+        xs={12}
+        md={7}
+        minHeight="80vh"
+        sx={{
+          background: 'black',
+          pt: 4,
+          WebkitClipPath: {
+            md: 'polygon(10% 0, 100% 0%, 100% 100%, 0% 100%)',
+          },
+        }}
+      >
+        <Grid xs={12} pl="80px">
           <HomeNavBar
             scrollToAbout={scrollToAbout}
             scrollToSkills={scrollToSkills}
@@ -126,63 +141,96 @@ export const DashBoard: FC<IDashBoard> = ({
             scrollToContactMe={scrollToContactMe}
             handleScroll={handleScroll}
           />
-          <Box p={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <CustomAvatar src="/sofiane-avt.png" width={200} height={300} />
-          </Box>
-        </Box>
-        <Box display='flex' justifyContent='center' alignItems='center' minHeight='4vh'>
-          <TextScroller
-            texts={[
-              t('dashboardPage:TextScroller-1'),
-              t('dashboardPage:TextScroller-2'),
-              t('dashboardPage:TextScroller-3'),
-            ]}
+        </Grid>
+        <Grid
+          xs={12}
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'start',
+          }}
+        >
+          <CustomAvatar
+            variant="circular"
+            src="/sofiane-img-black-bg.png"
+            width={350}
+            height={350}
           />
-        </Box>
+        </Grid>
       </Grid>
-      <Grid  container columnSpacing={4}  p={2} textAlign="center"  sx={{ bgcolor: '#1e1d1e', display:'flex', alignItems:'center' }}>          
-          <Grid item  xs={6} md={3}>
-            <Typography component="body" color="white">
-              {t('dashboardPage:selfDescription-1')}
-            </Typography>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Typography component="body" color="white">
-              {t('dashboardPage:selfDescription-2')}
-            </Typography>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Typography component="body" color="white">
-              {t('dashboardPage:interestedText')}
-            </Typography>
-          </Grid>
-          <Grid item xs={6} md={3} display="flex" alignItems="center" justifyContent='center' >
-            <Button
-              onClick={() => handleScroll(scrollToContactMe)}
-              sx={{
-                textTransform: 'none',
-                lineHeight: 1.5,
-                pl: { xs: 2, md: 4 },
-                pr: { xs: 2, md: 3 },
-                ':hover': {
-                  color: 'black',
-                  bgcolor: 'aqua',
-                },
-                borderRadius: 8,
-                border: 1,
-                borderColor: 'aqua',
-                bgcolor: 'none',
-                color: 'aqua',
-              }}
-            >
-              <Typography pr={1}>
-                {t('dashboardPage:interestedButton')}
-              </Typography>
-              <DirectionsIcon fontSize="large" />
-            </Button>
-          </Grid>
-          </Grid>
+      <Grid
+        width="100%"
+        minHeight="5vh"
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <TextScroller
+          texts={[
+            t('dashboardPage:TextScroller-1'),
+            t('dashboardPage:TextScroller-2'),
+            t('dashboardPage:TextScroller-3'),
+          ]}
+        />
       </Grid>
-    </Box>
+      <Grid
+        container
+        columnSpacing={4}
+        p={2}
+        textAlign="center"
+        minHeight="15vh"
+        sx={{ bgcolor: '#1e1d1e', display: 'flex', alignItems: 'center' }}
+      >
+        <Grid item xs={6} md={3}>
+          <Typography component="body" color="white">
+            {t('dashboardPage:selfDescription-1')}
+          </Typography>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Typography component="body" color="white">
+            {t('dashboardPage:selfDescription-2')}
+          </Typography>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Typography component="body" color="white">
+            {t('dashboardPage:interestedText')}
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={6}
+          md={3}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Button
+            onClick={() => handleScroll(scrollToContactMe)}
+            sx={{
+              textTransform: 'none',
+              lineHeight: 1.5,
+              pl: { xs: 2, md: 4 },
+              pr: { xs: 2, md: 3 },
+              ':hover': {
+                color: 'black',
+                bgcolor: 'aqua',
+              },
+              borderRadius: 8,
+              border: 1,
+              borderColor: 'aqua',
+              bgcolor: 'none',
+              color: 'aqua',
+            }}
+          >
+            <Typography pr={1}>
+              {t('dashboardPage:interestedButton')}
+            </Typography>
+            <DirectionsIcon fontSize="large" />
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };

@@ -13,7 +13,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: 'fr_CA',
+    lng: 'en_CA',
     resources,
     detection: {
       order: [

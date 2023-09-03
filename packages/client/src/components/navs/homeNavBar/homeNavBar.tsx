@@ -25,7 +25,7 @@ const HomeNavBar: FC<IHomeNavBar> = ({
       p={2}
       sx={{
         justifyContent: 'space-around',
-        textAlign: 'center',
+        textAlign: 'end',
       }}
     >
       <Button
