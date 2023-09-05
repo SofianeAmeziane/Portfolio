@@ -25,7 +25,7 @@ export const LanguagePopover = () => {
 
   const langDetailFind = LANGS.find((lang) => lang.value === i18n.language);
   return (
-    <div>
+    <>
       <IconButton
         onClick={handleOpen}
         sx={{
@@ -73,6 +73,6 @@ export const LanguagePopover = () => {
           ))}
         </Stack>
       </Popover>
-    </div>
+    </>
   );
 };

@@ -71,7 +71,7 @@ export const HumbergerMenu: FC<IHumbergerMenu> = ({
   }, [open]);
 
   return (
-    <div>
+    <>
       <Box display={{ xs: 'flex', md: 'none' }}>
         <IconButton
           size="large"
@@ -148,6 +148,6 @@ export const HumbergerMenu: FC<IHumbergerMenu> = ({
           </Grow>
         )}
       </Popper>
-    </div>
+    </>
   );
 };

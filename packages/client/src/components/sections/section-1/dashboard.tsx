@@ -32,6 +32,7 @@ export const DashBoard: FC<IDashBoard> = ({
   return (
     <Grid ref={scrollToDashboard} minHeight="100vh" container direction="row">
       <Grid
+        item
         minHeight="80vh"
         xs={12}
         md={5}
@@ -121,6 +122,7 @@ export const DashBoard: FC<IDashBoard> = ({
       </Grid>
       <Grid
         container
+        item
         direction="row"
         xs={12}
         md={7}
@@ -133,7 +135,7 @@ export const DashBoard: FC<IDashBoard> = ({
           },
         }}
       >
-        <Grid xs={12} pl="80px">
+        <Grid item xs={12} pl="80px">
           <HomeNavBar
             scrollToAbout={scrollToAbout}
             scrollToSkills={scrollToSkills}
@@ -143,6 +145,7 @@ export const DashBoard: FC<IDashBoard> = ({
           />
         </Grid>
         <Grid
+          item
           xs={12}
           sx={{
             display: 'flex',

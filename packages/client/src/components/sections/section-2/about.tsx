@@ -152,7 +152,7 @@ export const About: FC<IAbout> = ({ scrollToAbout, scrollToSkills }) => {
             </Grid>
             <Grid container rowSpacing={6} spacing={4}>
               {skillsList.map((title: string) => {
-                return <Item title={title} />;
+                return <Item key={title} title={title} />;
               })}
 
               <Grid item md={3} sm={6} xs={12} textAlign="center">
@@ -187,7 +187,7 @@ export const About: FC<IAbout> = ({ scrollToAbout, scrollToSkills }) => {
               {moreSkills && (
                 <>
                   {moreSkillsList.map((title: string) => {
-                    return <Item title={title} />;
+                    return <Item key={title} title={title} />;
                   })}
                 </>
               )}
@@ -201,7 +201,7 @@ export const About: FC<IAbout> = ({ scrollToAbout, scrollToSkills }) => {
             </Grid>
             <Grid container rowSpacing={6} spacing={4}>
               {learningList.map((title: string) => {
-                return <Item title={title} />;
+                return <Item key={title} title={title} />;
               })}
             </Grid>
           </Grid>

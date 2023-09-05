@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import {
   ButtonBack,
   ButtonNext,
@@ -13,7 +13,6 @@ import Card from '../Card';
 import { Box } from '@mui/material';
 import useWindowSize from '../../../hooks/windowSiz';
 import { useTranslation } from 'react-i18next';
-import experience from './carouselSliderData.json';
 
 interface ICarouselSlider {
   setSlideCount: any;
@@ -35,6 +34,16 @@ const CarouselSlider: FC<ICarouselSlider> = ({
   const { t } = useTranslation();
   const screenWidth = useWindowSize();
   const carouselContext = useContext(CarouselContext);
+  const [experience, setexperience] = useState([]);
+
+  const getPortfolios = async () => {
+    const response = await fetch('http://localhost:4000/portfolios');
+    const portfolios = await response.json();
+    setexperience(portfolios);
+  };
+  useEffect(() => {
+    getPortfolios();
+  }, []);
 
   useEffect(() => {
     const updateCarouselSlide = (slideToBeVisible: any) => {
@@ -65,7 +74,7 @@ const CarouselSlider: FC<ICarouselSlider> = ({
       <Slider>
         {experience.map((job: IJobExperience) => {
           return (
-            <Slide index={job.id} className="slide">
+            <Slide key={job.id} index={job.id} className="slide">
               <Card
                 jobTitle={t(`portfolioPage:${job.jobTitle}`)}
                 description={t(`portfolioPage:${job.description}`)}

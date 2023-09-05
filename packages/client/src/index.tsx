@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
+  <>
     <AnimatedCursor
       innerSize={15}
       outerSize={15}
@@ -22,5 +22,5 @@ root.render(
       }}
     />
     <App />
-  </React.StrictMode>,
+  </>,
 );

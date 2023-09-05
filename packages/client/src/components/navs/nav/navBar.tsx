@@ -1,5 +1,5 @@
 import React, { FC, MutableRefObject, useEffect, useState } from 'react';
-import { AppBar, Toolbar, Button, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import HumbergerMenu from '../humbergerMenu';
 import { useTranslation } from 'react-i18next';
@@ -59,9 +59,16 @@ const FixedNavBar: FC<IFixedNavBar> = ({
       }}
     >
       <StyledToolbar variant="dense">
-        <Box pl={2} onClick={() => handleScrollSection(scrollToDashboard)}>
-          <img src={'../../LogoSofiane.ico'} alt="sofiane" loading="lazy" />
-        </Box>
+        <IconButton
+          aria-label="Github.com"
+          onClick={() => handleScrollSection(scrollToDashboard)}
+        >
+          <img
+            src={'../../LogoSofiane.ico'}
+            alt="sofiane Logo"
+            loading="lazy"
+          />
+        </IconButton>
         <HumbergerMenu
           scrollToAbout={scrollToAbout}
           scrollToSkills={scrollToSkills}

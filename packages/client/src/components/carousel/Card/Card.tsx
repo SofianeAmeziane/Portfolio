@@ -42,8 +42,8 @@ const ActionAreaCard: FC<IActionAreaCard> = ({
           p={2}
           alignItems="flex-end"
         >
-          {skills.map((item: any) => (
-            <Grid item xs={6} md={4}>
+          {skills.map((item: string) => (
+            <Grid key={item} item xs={6} md={4}>
               <Chip
                 label={item}
                 sx={{
