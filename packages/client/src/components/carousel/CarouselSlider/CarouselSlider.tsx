@@ -13,6 +13,7 @@ import Card from '../Card';
 import { Box } from '@mui/material';
 import useWindowSize from '../../../hooks/windowSiz';
 import { useTranslation } from 'react-i18next';
+import portfolios from './portfolios.json';
 
 interface ICarouselSlider {
   setSlideCount: any;
@@ -72,7 +73,7 @@ const CarouselSlider: FC<ICarouselSlider> = ({
   return (
     <Box>
       <Slider>
-        {experience.map((job: IJobExperience) => {
+        {portfolios.map((job: IJobExperience) => {
           return (
             <Slide key={job.id} index={job.id} className="slide">
               <Card
