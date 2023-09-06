@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
-//import { readFile } from 'fs/promises';
+import { readFile } from 'fs/promises';
 
 @Injectable()
 export class PortfoliosService {
-  getPortfolios = async () => {
+  getPortfolios = async (dataPath: string) => {
     try {
-      //   const buffer = await readFile(dataPath, {
-      //     encoding: 'utf-8',
-      //   });
-      //   const portfolios = JSON.parse(buffer);
-      //   console.log(portfolios);
-      return 'Portfoliossss';
+      const data = await readFile(dataPath, {
+        encoding: 'utf8',
+      });
+
+      //const portfolios = JSON.parse(data);
+      return data;
     } catch (err: any) {
       throw new Error(err.message);
     }
