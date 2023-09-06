@@ -1,11 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { PortfolioService } from './portfolio.service';
+import { PortfoliosService } from './portfolios.service';
 import { Portfolio } from './portfolio.model';
 
 const PORTFOLIOS_PATH = '../server/DB/portfolios.json';
+
 @Controller('portfolios')
-export class PortfolioController {
-  constructor(private readonly portfolioService: PortfolioService) {}
+export class PortfoliosController {
+  constructor(private readonly portfolioService: PortfoliosService) {}
 
   @Get()
   async getPortfolios(): Promise<Portfolio> {

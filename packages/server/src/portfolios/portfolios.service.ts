@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { readFile } from 'fs/promises';
 
 @Injectable()
-export class PortfolioService {
+export class PortfoliosService {
   getPortfolios = async (dataPath: string) => {
     try {
       const buffer = await readFile(dataPath, {
