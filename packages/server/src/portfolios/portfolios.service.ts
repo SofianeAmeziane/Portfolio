@@ -5,14 +5,15 @@ import { readFile } from 'fs/promises';
 export class PortfoliosService {
   getPortfolios = async (dataPath: string) => {
     try {
-      const data = await readFile(dataPath, {
+      const buffer = await readFile(dataPath, {
         encoding: 'utf8',
       });
-
-      //const portfolios = JSON.parse(data);
-      return data;
+      const portfolios = JSON.parse(buffer);
+      return portfolios;
     } catch (err: any) {
-      throw new Error(err.message);
+      console.log({ err });
+
+      return err.message;
     }
   };
 }
