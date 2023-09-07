@@ -11,8 +11,6 @@ export class PortfoliosService {
       const portfolios = JSON.parse(buffer);
       return portfolios;
     } catch (err: any) {
-      console.log({ err });
-
       return err.message;
     }
   };

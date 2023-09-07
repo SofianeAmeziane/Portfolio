@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { PortfoliosService } from './portfolios.service';
 import { Portfolio } from './portfolio.model';
 
-const PORTFOLIOS_PATH = '../server/DB/portfolios.json';
+const PORTFOLIOS_PATH = './src/DB/portfolios.json';
 
 @Controller('portfolios')
 export class PortfoliosController {
