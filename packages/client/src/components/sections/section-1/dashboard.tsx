@@ -67,14 +67,14 @@ export const DashBoard: FC<IDashBoard> = ({
                 {t('dashboardPage:myName')}
               </Typography>
               <Typography
-                component="div"
+                component="p"
                 variant="body1"
                 sx={{ fontStyle: 'italic', fontWeight: 'bold' }}
               >
                 {t('dashboardPage:myJob')}
               </Typography>
               <Typography
-                component="div"
+                component="p"
                 variant="body1"
                 sx={{ color: 'text.secondary' }}
               >
@@ -187,17 +187,17 @@ export const DashBoard: FC<IDashBoard> = ({
         sx={{ bgcolor: '#1e1d1e', display: 'flex', alignItems: 'center' }}
       >
         <Grid item xs={6} md={3}>
-          <Typography component="body" color="white">
+          <Typography variant="body1" color="white">
             {t('dashboardPage:selfDescription-1')}
           </Typography>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Typography component="body" color="white">
+          <Typography variant="body1" color="white">
             {t('dashboardPage:selfDescription-2')}
           </Typography>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Typography component="body" color="white">
+          <Typography variant="body1" color="white">
             {t('dashboardPage:interestedText')}
           </Typography>
         </Grid>

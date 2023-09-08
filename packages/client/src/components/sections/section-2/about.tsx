@@ -59,13 +59,7 @@ export const About: FC<IAbout> = ({ scrollToAbout, scrollToSkills }) => {
 
   return (
     <Container ref={scrollToAbout}>
-      <Grid
-        p={8}
-        spacing={6}
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Grid p={8} alignItems="center" justifyContent="center">
         <Box sx={{ display: 'flex', justifyContent: 'center' }} mb={8}>
           <Typography
             variant="h4"

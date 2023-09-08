@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import {
   ButtonBack,
   ButtonNext,
@@ -35,16 +35,6 @@ const CarouselSlider: FC<ICarouselSlider> = ({
   const { t } = useTranslation();
   const screenWidth = useWindowSize();
   const carouselContext = useContext(CarouselContext);
-  const [experience, setexperience] = useState([]);
-
-  const getPortfolios = async () => {
-    const response = await fetch('http://localhost:4000/portfolios');
-    const portfolios = await response.json();
-    setexperience(portfolios);
-  };
-  useEffect(() => {
-    getPortfolios();
-  }, []);
 
   useEffect(() => {
     const updateCarouselSlide = (slideToBeVisible: any) => {
